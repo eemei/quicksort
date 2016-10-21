@@ -1,91 +1,94 @@
 /*
 *   Quick Sort:
 * example: 4 7 12 5 3 1 34 5
-*          ^               ^
-*      INDEX            PIVOT
-* -> take LAST value as "pivot" value 
-* 
-*
-*
-*
-*
-* -> use recursive function
-* a b c d e| f g h i
-*          ^
-*         pIndex
-* QuickSort (array[], start, pIndex-1)
-* QuickSort (array[], pIndex+1, end)
+*          ^              
+*       start            
+* -> take START value as "pivot" value 
 *
 */
 
 #include "QuickSort.h"
 #include <stdio.h>
 
-const int n = 10;
-const int begin = 0;
+#define MAX 8
+
+int a[MAX] = { 19, 32, 18, 24, 30, 12, 28, 20};
 
 
-
-void swap(int a, int b){
-  int temp;
-  temp = a;
-  a = b;
-  b = temp;
-}
-
-void arrangement(int array[10], int start, int end){
-  int pivot, pIndex;
-  int i;
-  pivot = array[10];
-  start = pIndex;
-  printf ("pivot = %d   start = %d\n",pivot, start);
-  // for (i = 0; i<n-1; i++){
-    // if (array[i] < pivot){
-      // swap(array[i], pivot);
-      // pIndex = pIndex + 1;
-    // } 
-  // }
-  //return pIndex;
-}
-
-
-// void QuickSort(int array[n], int start, int end){
- // arrangement(array[n], start, end);
- // QuickSort (array[n], start,pIndex-1);
- // QuickSort (array[n], pIndex+1, end);
-// }
 
 void program(){
-int i, j;
- int array[10] = {5, 4, 12, 3, 1, 8, 6, 9, 6, 2};
- for (i = 0; i < 10; i++){
- printf("array[%d] = %d\t", i, array[i]);
- }
-  int pivot, pIndex;
-  
-  pivot = array[9];
-  //start = pIndex;
-  printf ("pivot = %d  \n",pivot);
+	int i;
+	printf("Unsorted array is:  ");
+	for(i = 0; i < MAX; ++i)
+		printf(" %d ", a[i]);
+    printf("\n");
+    printline(50);
+    quickSort( a, 0, 8);
+    printline(50);
+    printf("\nSorted array is:  ");
+    display();
 }
 
+void printline(int count){
+   int i;
+	
+   for(i = 0;i <count-1;i++){
+      printf("=");
+   }
+	
+   printf("=\n");
+}
 
+void display(){
+   int i;
+   printf("\n[");
+   for(i = 0;i<MAX;i++){
+      printf(" %d ",a[i]);
+   }
+	
+   printf("]\n");
+}
 
+void quickSort(int a[], int start, int end){
+  int j;
+   if( start < end ){
+        j = partition( a, start, end);
+       quickSort( a, start, j-1);
+       quickSort( a, j+1, end);
+    }
+    else
+    return;
+}
 
+void swap(int num1, int num2) {
+  int temp;
+  temp = a[num1];
+  a[num1] = a[num2];
+  a[num2] = temp;
+}
 
+int partition(int a[], int start, int end) {
+  int pivot, i, j;
+  pivot = a[start];
+  i = start; 
+  j = end + 1;
+		
+  while(i<j){ 
+    do
+      ++i; 
+    while (a[i] <= pivot && i <= end);
+    do
+    --j; 
+    while( a[j] > pivot );
+      if( i >= j )
+      break;
+    swap(i, j);
+    printf("\nitem swapped :%d,%d\n", a[i], a[j]);
+    display();
+   }
+  swap(start, j);
+  printf("\npivot swapped :%d,%d\n", a[start], a[j]);
+  display();
+  return j;
+}
 
-
-
-
-
-
-/*
-* PARTITION:
-* pivot = array[n];
-* pIndex = start;
-* for (i = start to end-1)
-* {
-*   if array[i] <= pivot
-*     swap A[i], array[pIndex]
-*     pIndex = pIndex + 1
-*
-*/

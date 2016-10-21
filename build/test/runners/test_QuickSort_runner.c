@@ -31,6 +31,7 @@ char* GlobalOrderError;
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_module_generator_needs_to_be_implemented(void);
+extern void test_swap_function(void);
 
 
 //=======Test Reset Option=====
@@ -46,7 +47,8 @@ int main(void)
 {
   Unity.TestFile = "test_QuickSort.c";
   UnityBegin();
-  RUN_TEST(test_module_generator_needs_to_be_implemented, 12);
+  RUN_TEST(test_module_generator_needs_to_be_implemented, 8);
+  RUN_TEST(test_swap_function, 13);
 
   return (UnityEnd());
 }
