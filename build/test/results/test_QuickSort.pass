@@ -3,23 +3,32 @@
   :path: test
   :file: test_QuickSort.c
 :successes:
-- :test: test_swap_function_given_5_and_10
+- :test: test_swap_function_given_2_and_3
   :line: 14
   :message: ''
 - :test: test_partition_function_given_pivot_value_is_18
-  :line: 22
+  :line: 23
   :message: ''
 - :test: test_partition_function_given_pivot_value_is_25
-  :line: 32
+  :line: 33
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_negative_1
+  :line: 43
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_larger_value
+  :line: 53
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_same_value_as_member
+  :line: 63
   :message: ''
 - :test: test_quickSort_function_with_given_13_4_3_52_23_14_21_0
-  :line: 42
+  :line: 73
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 4
-  :passed: 4
+  :total: 7
+  :passed: 7
   :failed: 0
   :ignored: 0
 :stdout:
@@ -39,6 +48,26 @@
 - pivot swapped :6,25
 - ''
 - "[ 6  4  20  25  30  40  28  26 ]"
+- ''
+- pivot swapped :-1,-1
+- ''
+- "[ -1  4  40  6  30  20  30  26 ]"
+- ''
+- pivot swapped :26,50
+- ''
+- "[ 26  4  40  6  30  20  28  50 ]"
+- ''
+- item swapped :22,40
+- ''
+- "[ 22  4  22  6  30  20  40  26 ]"
+- ''
+- item swapped :20,30
+- ''
+- "[ 22  4  22  6  20  30  40  26 ]"
+- ''
+- pivot swapped :20,22
+- ''
+- "[ 20  4  22  6  22  30  40  26 ]"
 - ''
 - item swapped :0,52
 - ''

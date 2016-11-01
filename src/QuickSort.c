@@ -70,11 +70,14 @@ void swap(int num1, int num2, int *a){
 }
 
 int partition(int *a, int start, int end){
-  int pivot, i, j;
+ 
+  int pivot, i, j; //randValue;
+  //randValue = rand() % (8);
+  //pivot = a[randValue];  
   pivot = a[start];
   i = start; 
   j = end + 1;
-		
+	//swap(randValue, start, a);
   while(i<j){ 
     do{
       i++;
@@ -93,3 +96,4 @@ int partition(int *a, int start, int end){
   display(a);
   return j;
 }
+
