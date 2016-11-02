@@ -18,82 +18,91 @@
 
 //int a[MAX] = {25, 4, 40, 6, 30, 27, 28, 20};
 
-void program(int *a){
+void program(int *arr){
 	int i;
 	printf("Unsorted array is:  ");
 	for(i = 0; i < MAX; ++i)
-		printf(" %d ", a[i]);
+		printf(" %d ", arr[i]);
     printf("\n");
-    printline(50);
-    quickSort( a, 0, 8);
-    printline(50);
+    quickSort( arr, 0, 8);
     printf("\nSorted array is:  ");
-    display(a);
-    printline(50);
+    display(arr);
 }
 
-void printline(int count){
-  int i;
-	
-  for(i = 0;i <count-1;i++){
-      printf("=");
-  }
-	
-  printf("=\n");
-}
-
-void display(int *a){
+/*
+* ->  for display all the element of the array
+*/
+void display(int *arr){
   int i;
   printf("\n[");
   for(i = 0;i<MAX;i++){
-    printf(" %d ",a[i]);
+    printf(" %d ",arr[i]);
   }
 	printf("]\n");
 }
 
-void quickSort(int *a, int start, int end){
-  int j;
+/*
+*  1 − Make the LEFT-most index value pivot
+*  2 − partition the array using pivot value
+*  3 − quicksort left partition recursively
+*  4 − quicksort right partition recursively
+*/
+void quickSort(int *arr, int start, int end){
+  int partitioned;
   if(start < end){
-    j = partition( a, start, end);
-    quickSort( a, start, j-1);
-    quickSort( a, j+1, end);
+    partitioned = partition( arr, start, end);
+    quickSort( arr, start, partitioned-1);
+    quickSort( arr, partitioned+1, end);
   }
     else
     return;
 }
-
-void swap(int num1, int num2, int *a){
+/*
+* swap two different index of array
+*/
+void swap(int num1, int num2, int *arr){
   int temp;
-  temp = a[num1];
-  a[num1] = a[num2];
-  a[num2] = temp;
+  temp = arr[num1];
+  arr[num1] = arr[num2];
+  arr[num2] = temp;
 }
 
-int partition(int *a, int start, int end){
+/*
+* 1 - Make the LEFT-most index value pivot 
+  2 - put pivot at its correct position in sorted array 
+  3 - put all smaller elements which :
+      - smaller than pivot 
+      - put before pivot, 
+  4 - put all greater elements which :
+      - greater than pivot 
+      - put after pivot. 
+*/
+
+int partition(int *arr, int start, int end){
  
-  int pivot, i, j; //randValue;
+  int pivot, i, j; 
   //randValue = rand() % (8);
-  //pivot = a[randValue];  
-  pivot = a[start];
+  //pivot = arr[randValue];  
+  pivot = arr[start];
   i = start; 
   j = end + 1;
-	//swap(randValue, start, a);
+	//swap(randValue, start, arr);
   while(i<j){ 
     do{
       i++;
-    }while(a[i] <= pivot && i <= end);
+    }while(arr[i] <= pivot && i <= end);
     do{
       j--;
-    }while(a[j] > pivot);
+    }while(arr[j] > pivot);
     if(i >= j)
       break;
-    swap(i, j, a);
-    printf("\nitem swapped :%d,%d\n", a[i], a[j]);
-    display(a);
+    swap(i, j, arr);
+    printf("\nitem swapped :%d,%d\n", arr[i], arr[j]);
+    display(arr);
    }
-  swap(start, j, a);
-  printf("\npivot swapped :%d,%d\n", a[start], a[j]);
-  display(a);
+  swap(start, j, arr);
+  printf("\npivot swapped :%d,%d\n", arr[start], arr[j]);
+  display(arr);
   return j;
 }
 
