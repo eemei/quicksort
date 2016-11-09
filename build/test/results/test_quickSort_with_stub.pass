@@ -1,10 +1,10 @@
 ---
 :source:
   :path: test
-  :file: test_QuickSort.c
+  :file: test_quickSort_with_stub.c
 :successes:
-- :test: test_quickSort_function_with_given_13_4_3_52_23_14_21_0
-  :line: 74
+- :test: test_module_generator_needs_to_be_implemented
+  :line: 9
   :message: ''
 :failures: []
 :ignores: []

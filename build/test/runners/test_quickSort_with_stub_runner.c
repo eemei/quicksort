@@ -8,9 +8,12 @@
   Unity.NumberOfTests++; \
   if (TEST_PROTECT()) \
   { \
+      CMock_Init(); \
       setUp(); \
       TestFunc(); \
+      CMock_Verify(); \
   } \
+  CMock_Destroy(); \
   if (TEST_PROTECT() && !TEST_IS_IGNORED) \
   { \
     tearDown(); \
@@ -20,8 +23,10 @@
 
 //=======Automagically Detected Files To Include=====
 #include "unity.h"
+#include "cmock.h"
 #include <setjmp.h>
 #include <stdio.h>
+#include "mock_quickSortSub.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -30,13 +35,33 @@ char* GlobalOrderError;
 //=======External Functions This Runner Calls=====
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_quickSort_function_with_given_13_4_3_52_23_14_21_0(void);
+extern void test_module_generator_needs_to_be_implemented(void);
 
+
+//=======Mock Management=====
+static void CMock_Init(void)
+{
+  GlobalExpectCount = 0;
+  GlobalVerifyOrder = 0;
+  GlobalOrderError = NULL;
+  mock_quickSortSub_Init();
+}
+static void CMock_Verify(void)
+{
+  mock_quickSortSub_Verify();
+}
+static void CMock_Destroy(void)
+{
+  mock_quickSortSub_Destroy();
+}
 
 //=======Test Reset Option=====
 void resetTest()
 {
+  CMock_Verify();
+  CMock_Destroy();
   tearDown();
+  CMock_Init();
   setUp();
 }
 
@@ -44,9 +69,9 @@ void resetTest()
 //=======MAIN=====
 int main(void)
 {
-  Unity.TestFile = "test_QuickSort.c";
+  Unity.TestFile = "test_quickSort_with_stub.c";
   UnityBegin();
-  RUN_TEST(test_quickSort_function_with_given_13_4_3_52_23_14_21_0, 74);
+  RUN_TEST(test_module_generator_needs_to_be_implemented, 9);
 
   return (UnityEnd());
 }
