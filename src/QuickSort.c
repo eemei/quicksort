@@ -52,7 +52,9 @@ void quickSort(int *arr, int start, int end){
   int partitioned;
   if(start < end){
     partitioned = partition( arr, start, end);
+    printf ("start = %d, partition = %d\n", start, partitioned);
     quickSort( arr, start, partitioned-1);
+    printf ("2start = %d, partition = %d\n", start, partitioned);
     quickSort( arr, partitioned+1, end);
   }
     else

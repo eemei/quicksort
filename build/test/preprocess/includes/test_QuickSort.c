@@ -1,4 +1,4 @@
 ---
 - QuickSort.h
-- quickSortSub.h
+- quickSortStub.h
 - unity.h

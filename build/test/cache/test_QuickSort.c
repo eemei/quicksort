@@ -1,5 +1,5 @@
 #include "unity.h"
-#include "quickSortSub.h"
+#include "quickSortStub.h"
 #include "QuickSort.h"
 
 

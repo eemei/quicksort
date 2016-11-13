@@ -8,7 +8,7 @@ int partition( int *arr, int start, int end);
 void swap(int num1, int num2, int *arr);
 
 #ifdef TEST
-#include "quickSortSub.h"
+#include "quickSortStub.h"
 #else
 #define__quickSort quickSort
 #endif // TEST

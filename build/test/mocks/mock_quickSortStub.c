@@ -4,7 +4,7 @@
 #include <setjmp.h>
 #include "unity.h"
 #include "cmock.h"
-#include "mock_quickSortSub.h"
+#include "mock_quickSortStub.h"
 
 typedef struct _CMOCK__quickSort_CALL_INSTANCE
 {
@@ -16,7 +16,7 @@ typedef struct _CMOCK__quickSort_CALL_INSTANCE
 
 } CMOCK__quickSort_CALL_INSTANCE;
 
-static struct mock_quickSortSubInstance
+static struct mock_quickSortStubInstance
 {
   int _quickSort_IgnoreBool;
   CMOCK__quickSort_CALLBACK _quickSort_CallbackFunctionPointer;
@@ -28,7 +28,7 @@ extern jmp_buf AbortFrame;
 extern int GlobalExpectCount;
 extern int GlobalVerifyOrder;
 
-void mock_quickSortSub_Verify(void)
+void mock_quickSortStub_Verify(void)
 {
   UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
   if (Mock._quickSort_IgnoreBool)
@@ -38,12 +38,12 @@ void mock_quickSortSub_Verify(void)
     Mock._quickSort_CallInstance = CMOCK_GUTS_NONE;
 }
 
-void mock_quickSortSub_Init(void)
+void mock_quickSortStub_Init(void)
 {
-  mock_quickSortSub_Destroy();
+  mock_quickSortStub_Destroy();
 }
 
-void mock_quickSortSub_Destroy(void)
+void mock_quickSortStub_Destroy(void)
 {
   CMock_Guts_MemFreeAll();
   memset(&Mock, 0, sizeof(Mock));

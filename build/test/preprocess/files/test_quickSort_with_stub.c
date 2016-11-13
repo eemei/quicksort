@@ -1,5 +1,5 @@
 #include "unity.h"
-#include "mock_quickSortSub.h"
+#include "mock_quickSortStub.h"
 #include "QuickSort.h"
 
 
@@ -21,9 +21,9 @@ void test_module_generator_needs_to_be_implemented(void)
 
   int end =7;
 
+  int arrp[8] = { 0, 4, 3, 13, 23, 14, 21, 52};
 
-
-
+  _quickSort_CMockExpect(15, arrp, 1, 1);
 
   quickSort(arr, 0, end);
 

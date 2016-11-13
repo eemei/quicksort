@@ -1,4 +1,4 @@
 ---
 - QuickSort.h
-- mock_quickSortSub.h
+- mock_quickSortStub.h
 - unity.h

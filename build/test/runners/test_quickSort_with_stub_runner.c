@@ -26,7 +26,7 @@
 #include "cmock.h"
 #include <setjmp.h>
 #include <stdio.h>
-#include "mock_quickSortSub.h"
+#include "mock_quickSortStub.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -44,15 +44,15 @@ static void CMock_Init(void)
   GlobalExpectCount = 0;
   GlobalVerifyOrder = 0;
   GlobalOrderError = NULL;
-  mock_quickSortSub_Init();
+  mock_quickSortStub_Init();
 }
 static void CMock_Verify(void)
 {
-  mock_quickSortSub_Verify();
+  mock_quickSortStub_Verify();
 }
 static void CMock_Destroy(void)
 {
-  mock_quickSortSub_Destroy();
+  mock_quickSortStub_Destroy();
 }
 
 //=======Test Reset Option=====

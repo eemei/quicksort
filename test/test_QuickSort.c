@@ -1,6 +1,6 @@
 #include "unity.h"
 #include "QuickSort.h"
-#include "quickSortSub.h"
+#include "quickSortStub.h"
 
 void setUp(void){}
 
