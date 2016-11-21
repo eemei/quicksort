@@ -30,6 +30,12 @@ char* GlobalOrderError;
 //=======External Functions This Runner Calls=====
 extern void setUp(void);
 extern void tearDown(void);
+extern void test_swap_function_given_2_and_3(void);
+extern void test_partition_function_given_pivot_value_is_18(void);
+extern void test_partition_function_given_pivot_value_is_25(void);
+extern void test_partition_function_given_pivot_value_is_negative_1(void);
+extern void test_partition_function_given_pivot_value_is_larger_value(void);
+extern void test_partition_function_given_pivot_value_is_same_value_as_member(void);
 extern void test_quickSort_function_with_given_13_4_3_52_23_14_21_0(void);
 
 
@@ -46,6 +52,12 @@ int main(void)
 {
   Unity.TestFile = "test_QuickSort.c";
   UnityBegin();
+  RUN_TEST(test_swap_function_given_2_and_3, 15);
+  RUN_TEST(test_partition_function_given_pivot_value_is_18, 24);
+  RUN_TEST(test_partition_function_given_pivot_value_is_25, 34);
+  RUN_TEST(test_partition_function_given_pivot_value_is_negative_1, 44);
+  RUN_TEST(test_partition_function_given_pivot_value_is_larger_value, 54);
+  RUN_TEST(test_partition_function_given_pivot_value_is_same_value_as_member, 64);
   RUN_TEST(test_quickSort_function_with_given_13_4_3_52_23_14_21_0, 74);
 
   return (UnityEnd());

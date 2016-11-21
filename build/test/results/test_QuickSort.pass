@@ -3,17 +3,71 @@
   :path: test
   :file: test_QuickSort.c
 :successes:
+- :test: test_swap_function_given_2_and_3
+  :line: 15
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_18
+  :line: 24
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_25
+  :line: 34
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_negative_1
+  :line: 44
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_larger_value
+  :line: 54
+  :message: ''
+- :test: test_partition_function_given_pivot_value_is_same_value_as_member
+  :line: 64
+  :message: ''
 - :test: test_quickSort_function_with_given_13_4_3_52_23_14_21_0
   :line: 74
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 1
-  :passed: 1
+  :total: 7
+  :passed: 7
   :failed: 0
   :ignored: 0
 :stdout:
+- ''
+- item swapped :12,32
+- ''
+- "[ 19  12  18  24  30  32  28  20 ]"
+- ''
+- pivot swapped :18,19
+- ''
+- "[ 18  12  19  24  30  32  28  20 ]"
+- ''
+- item swapped :20,40
+- ''
+- "[ 25  4  20  6  30  40  28  26 ]"
+- ''
+- pivot swapped :6,25
+- ''
+- "[ 6  4  20  25  30  40  28  26 ]"
+- ''
+- pivot swapped :-1,-1
+- ''
+- "[ -1  4  40  6  30  20  30  26 ]"
+- ''
+- pivot swapped :26,50
+- ''
+- "[ 26  4  40  6  30  20  28  50 ]"
+- ''
+- item swapped :22,40
+- ''
+- "[ 22  4  22  6  30  20  40  26 ]"
+- ''
+- item swapped :20,30
+- ''
+- "[ 22  4  22  6  20  30  40  26 ]"
+- ''
+- pivot swapped :20,22
+- ''
+- "[ 20  4  22  6  22  30  40  26 ]"
 - ''
 - item swapped :0,52
 - ''
@@ -22,29 +76,29 @@
 - pivot swapped :0,13
 - ''
 - "[ 0  4  3  13  23  14  21  52 ]"
-- start = 0, partition = 3
 - ''
 - pivot swapped :0,0
 - ''
 - "[ 0  4  3  13  23  14  21  52 ]"
-- start = 0, partition = 0
-- 2start = 0, partition = 0
+- ''
+- "[ 0  4  3  13  23  14  21  52 ]"
 - ''
 - pivot swapped :3,4
 - ''
 - "[ 0  3  4  13  23  14  21  52 ]"
-- start = 1, partition = 2
-- 2start = 1, partition = 2
-- 2start = 0, partition = 3
+- ''
+- "[ 0  3  4  13  23  14  21  52 ]"
+- ''
+- "[ 0  3  4  13  23  14  21  52 ]"
 - ''
 - pivot swapped :21,23
 - ''
 - "[ 0  3  4  13  21  14  23  52 ]"
-- start = 4, partition = 6
 - ''
 - pivot swapped :14,21
 - ''
 - "[ 0  3  4  13  14  21  23  52 ]"
-- start = 4, partition = 5
-- 2start = 4, partition = 5
-- 2start = 4, partition = 6
+- ''
+- "[ 0  3  4  13  14  21  23  52 ]"
+- ''
+- "[ 0  3  4  13  14  21  23  52 ]"

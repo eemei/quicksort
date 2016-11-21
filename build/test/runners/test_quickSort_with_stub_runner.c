@@ -35,7 +35,8 @@ char* GlobalOrderError;
 //=======External Functions This Runner Calls=====
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_module_generator_needs_to_be_implemented(void);
+extern void test_quickSort_with_patition_value_is_three(void);
+extern void test_quickSort_with_patition_value_is_six(void);
 
 
 //=======Mock Management=====
@@ -71,7 +72,8 @@ int main(void)
 {
   Unity.TestFile = "test_quickSort_with_stub.c";
   UnityBegin();
-  RUN_TEST(test_module_generator_needs_to_be_implemented, 9);
+  RUN_TEST(test_quickSort_with_patition_value_is_three, 9);
+  RUN_TEST(test_quickSort_with_patition_value_is_six, 29);
 
   return (UnityEnd());
 }

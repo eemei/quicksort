@@ -1,0 +1,39 @@
+---
+:source:
+  :path: test
+  :file: test_quickSort_with_stub.c
+:successes:
+- :test: test_quickSort_with_patition_value_is_three
+  :line: 9
+  :message: ''
+- :test: test_quickSort_with_patition_value_is_six
+  :line: 29
+  :message: ''
+:failures: []
+:ignores: []
+:counts:
+  :total: 2
+  :passed: 2
+  :failed: 0
+  :ignored: 0
+:stdout:
+- ''
+- item swapped :0,52
+- ''
+- "[ 13  4  3  0  23  14  21  52 ]"
+- ''
+- pivot swapped :0,13
+- ''
+- "[ 0  4  3  13  23  14  21  52 ]"
+- ''
+- "[ 0  4  3  13  23  14  21  52 ]"
+- ''
+- item swapped :0,21
+- ''
+- "[ 17  4  3  2  8  9  0  21 ]"
+- ''
+- pivot swapped :0,17
+- ''
+- "[ 0  4  3  2  8  9  17  21 ]"
+- ''
+- "[ 0  4  3  2  8  9  17  21 ]"
